@@ -35,6 +35,6 @@ let person = {
     lastName: 'Azeem'
 };
 
-(function () {
-    console.log(person.firstName + ' ' + person.lastName);
+(function (person2) {
+    console.log(person2.firstName + ' ' + person2.lastName);
 })(person);
