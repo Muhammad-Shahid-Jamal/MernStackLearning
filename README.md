@@ -1,5 +1,3 @@
-# class 1
+# class 2
 
 ## Notes goes here
-
-Hi change
