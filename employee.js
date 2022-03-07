@@ -1,12 +1,12 @@
 const {db} = require('./data')
 
 const fetchUserById = (id, callback) => {
-    setTimeout(() => {
+    //setTimeout(() => {
         const results = db.users.find(i => i.id === id);
         results ?
             callback(null, results) :
             callback('Not found', null);
-    }, 2000);
+    //}, 2000);
 };
 
 fetchUserById(1, (err, user) => {
@@ -14,5 +14,5 @@ fetchUserById(1, (err, user) => {
         console.log('Error:', err);
         return;
     }
-    console.log('Factorial:', user);
+    console.log('User Details:', user);
 });
