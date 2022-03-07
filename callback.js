@@ -48,7 +48,7 @@ isEven(10, result => result ?
 
 //Even and Odd Example 2 : Approach 2
 //========================================
-function EvenOdd (number) {
+function evenOdd (number) {
     console.log(number)
     // super complex math problem
     if (number % 2 === 0) {
@@ -59,9 +59,9 @@ function EvenOdd (number) {
     }
 };
 
-function NumberFinder(num,fx){
+function numberFinder(num,fx){
     fx(num);
 }
 
-NumberFinder(7,EvenOdd);
+numberFinder(7,evenOdd);
 //========================================

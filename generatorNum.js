@@ -32,10 +32,10 @@ for (let i = 0; i < 10; i++) {
  */
 
 function* generatorFunction(value) {
-  while (true) {
+  while (value < 9) {
     value = yield value * 10
   }
-  return value;
+  return value *10;
 }
 
 // Initiate a generator and seed it with an initial value
