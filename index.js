@@ -7,8 +7,8 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/users',(req,res)=>{
-    
-    res.type('text/html');
+
+    //res.type('text/html');
     let data = [{
         name:'Zeeshan',
         position:'Trainee'

@@ -14,8 +14,8 @@ app.get('/about',(req,res)=>{
 
 //
 app.get('/getValue',(req,res)=>{
-    //res.send(req.query ) // object
-    res.send(req.query.Name) // name
+    res.send(req.query ) // object
+    //res.send(req.query.Name) // name
 
 })
 
