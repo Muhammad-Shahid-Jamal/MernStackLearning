@@ -1,22 +1,25 @@
-const http = require('http');
-const uuid = require("uuid").v1;
-
-const hostname = '127.0.0.1';
-const port = 80;
+const express = require('express');
+const app = express();
 
 
+app.get('/',(req,res)=>{
+    res.send('<h2>This is index page</h2>')
+})
 
-const server = http.createServer((req, res) => {
-    const jsonData = {
-    name:"shahid",
-    email:"shahid@abc.com",
-    id:uuid()
-}
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify(jsonData));
-});
+app.get('/users',(req,res)=>{
+    
+    res.type('text/html');
+    let data = [{
+        name:'Zeeshan',
+        position:'Trainee'
+    },{
+        name:'Shahid',
+        position:'Senior Engineer'
+    }];
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+    res.json(data);
+})
+
+app.listen(3000,()=>{
+    console.log('application started')
+})
