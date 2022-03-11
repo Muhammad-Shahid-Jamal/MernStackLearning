@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const path_dir = path.join(__dirname);
 app.use(express.json());
+
 /**
  * or 
  * const app = require("express")();
@@ -38,7 +39,7 @@ app.get("/user/:id", (req, res) => {
 });
 
 //update file
-app.put("/", (req, res) => {
+app.put("/user/update", (req, res) => {
     //check if response is coming from postman
     //console.log(req.body)
    
@@ -55,7 +56,7 @@ app.put("/", (req, res) => {
 });
 
 //Delete file
-app.delete("/", (req, res) => {
+app.delete("/user/update", (req, res) => {
     //check if response is coming from postman
     //console.log(req.body)
    
