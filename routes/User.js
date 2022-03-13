@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const checkAuth = require("../middleware/authenticate");
+const checkURL = require("../middleware/urlChecker");
 /**
  * user router file
  * get user data
@@ -39,6 +40,15 @@ router.get("/",(req,res)=>{
     //     users:users
     // });
 });
+
+//definition of route level middleware
+/**
+router.get("/testUrl",checkURL,(req,res)=>{
+    res.json({
+        users
+    });
+});
+*/
 
 router.delete("/:id",checkAuth,(req,res)=>{
     let _id = req.params.id;

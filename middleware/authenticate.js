@@ -1,3 +1,5 @@
+
+
 function checkAuth(req,res,next){
     if(req.body.user==="shahid"){
         next();
@@ -8,4 +10,5 @@ function checkAuth(req,res,next){
     }
 }
 
-module.exports = checkAuth;
+
+module.exports =  checkAuth;
