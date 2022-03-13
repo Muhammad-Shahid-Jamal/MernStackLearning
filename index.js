@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
-const userRouter = require("./routes/User");
+const todoRouter = require("./routes/Todo");
+const {connectToMongoDb} = require("./Db/connection");
+connectToMongoDb();
 
-
-const checkURL = require("./middleware/urlChecker");
+// const checkURL = require("./middleware/urlChecker");
 
 
 app.use(express.json());
@@ -14,9 +15,9 @@ app.use(express.json());
 
 
 //application level middleware
-app.use(checkURL);
+// app.use(checkURL);
 
-app.use("/v1/api/user",userRouter);
+app.use("/v1/api/todo",todoRouter);
 
 
 //show Page not found if url is not defained
