@@ -42,13 +42,13 @@ router.get("/",(req,res)=>{
 });
 
 //definition of route level middleware
-/**
+
 router.get("/testUrl",checkURL,(req,res)=>{
     res.json({
         users
     });
 });
-*/
+
 
 router.delete("/:id",checkAuth,(req,res)=>{
     let _id = req.params.id;
