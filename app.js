@@ -4,12 +4,18 @@ const {connectToMongoDb} = require("./Db/connection");
 const userRouterAuth = require("./routes/auth");
 
 // database connection
-connectToMongoDb();
+// connectToMongoDb();
 
 app.use(express.json());
 //user managment
-app.use("/v1/api/user",userRouterAuth);
+// app.use("/v1/api/user",userRouterAuth);
+app.get("/user",(req,res)=>{
+  res.json({user:[]});
+})
 
+app.get("/user/:id",(req,res)=>{
+  res.status(400).json({error:true});
+})
 app.get("*",(req,res)=>{
   res.status(404).send(`<h1>Page Not Found!</h1>`)
 });

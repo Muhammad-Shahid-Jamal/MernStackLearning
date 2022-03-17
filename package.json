@@ -7,7 +7,7 @@
     "start": "node index.js",
     "devserv": "nodemon index.js",
     "debug": "node --inspect index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watchAll --runInBand"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,12 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "@types/jest": "^27.4.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "superagent": "^7.1.1",
+    "supertest": "^6.2.2"
   }
 }
