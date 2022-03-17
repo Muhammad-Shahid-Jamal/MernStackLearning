@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const todoRouter = require("./routes/Todo");
+const employeeRouter = require("./routes/Employee");
 const {connectToMongoDb} = require("./Db/connection");
 connectToMongoDb();
 
@@ -8,16 +9,12 @@ connectToMongoDb();
 
 
 app.use(express.json());
-/**
- * or 
- * const app = require("express")();
- */
 
-
-//application level middleware
-// app.use(checkURL);
-
+//invoking TODO api
 app.use("/v1/api/todo",todoRouter);
+
+//invoking Employee api
+app.use("/v1/api/employee",employeeRouter);
 
 
 //show Page not found if url is not defained
