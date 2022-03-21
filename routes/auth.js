@@ -29,13 +29,14 @@ router.post("/login",async(req,res)=>{
         res.status(400).send("email and password are required field");
     }
     const user = await User.findOne({email});
+    console.log(user);
     if(user && (await bycrypt.compare(password,user.password))){
         //create jsontoken
         const token = jwt.sign({
             user_id:user._id,
             email,
         },JWT_SECRET,{
-            expiresIn:"30s"
+            expiresIn:"60s"
         });
         res.json({token});
     }else{
@@ -54,5 +55,5 @@ router.get("/",verifyToken,async(req,res)=>{
     }catch(error){
         res.status(500).send(error.message);
     }
-})
+});
 module.exports = router;
