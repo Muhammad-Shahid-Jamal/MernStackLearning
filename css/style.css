@@ -1,0 +1,39 @@
+:root {
+  --bg-color_desktop: red;
+  --bg-color_mobile: rgb(0, 204, 255);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+}
+
+div {
+  margin-top: 10px;
+  /* height: 1em; */
+  background-color: var(--bg-color_desktop);
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+div p {
+  height: 2em;
+  padding: 1rem;
+  /* background-color: gray; */
+}
+
+span {
+  margin-top: 20px;
+  width: 10px;
+  background-color: blue;
+  height: 1px;
+}
+
+@media only screen and (max-width: 400px) {
+  div {
+    background-color: var(--bg-color_mobile) !important;
+  }
+}
