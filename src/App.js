@@ -4,6 +4,10 @@ import './App.css';
 import Title from "./component/Title";
 import Counter from "./component/Counter";
 
+
+import Greet from './practice/FunctionalComp';
+import {Welcome} from './practice/ClassComp';
+
 function App() {
   const title="smart learning react";
   const countRef= useRef();
@@ -22,6 +26,15 @@ function App() {
           addCountValue();
         }}>count add</button>
       </header>
+
+      {/* Practice By Zeeshan :: Functional Component */}
+      <Greet name="Zeeshan" departmentName="Finance"/>
+      <Greet name="Shahid" departmentName="Info Tech"/>
+
+      {/* Practice By Zeeshan :: Class Component */}
+      <Welcome name="farhan" salary="40000"/>
+      <Welcome name="Shahrukh" salary="50000"/>
+
     </div>
   );
 }
