@@ -24,17 +24,15 @@ import PropTypes from "prop-types";
 const Greet = props => {
     return (
         <div>
-            <h1>Hello  {props.name} aka {props.departmentName}</h1>             
+            <h1>Hello  {props.name} works in {props.departmentName}</h1>             
         </div>
     )
 }
 
 Greet.propTypes = {
-    name:PropTypes.string.isRequired 
-};
-
-Greet.propTypes = {
+    name:PropTypes.string.isRequired,
     departmentName:PropTypes.string.isRequired 
 };
+
 
 export default Greet

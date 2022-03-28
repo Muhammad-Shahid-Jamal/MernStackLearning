@@ -9,11 +9,17 @@ export class Welcome extends Component {
         }
     }
 
-    changeMessage = () => {
+    changeMessage() {
         this.setState({
             message: "I do work in OETC"
         })
     }
+
+    // changeMessage = () => {
+    //     this.setState({
+    //         message: "I do work in OETC"
+    //     })
+    // }
 
     render() {
         return (
@@ -22,7 +28,6 @@ export class Welcome extends Component {
                     {this.state.message}
                 </h1>
                 <h1>Hello {this.props.name} earning {this.props.salary}</h1>
-
 
                 {<button onClick={() => this.changeMessage()}>Click Me</button>}
             </div>
