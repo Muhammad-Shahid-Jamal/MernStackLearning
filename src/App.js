@@ -1,62 +1,13 @@
-import { useState,useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Title from "./component/Title";
-import Counter from "./component/Counter";
-import counterGenerator from "./utility";
-
-const gen_count = counterGenerator();
-const initial_ = gen_count.next().value;
+import { useState } from "react";
+import Greeting from "./component/Greeting";
+import GuestGreeting from "./component/GuestGreeting";
 
 function App() {
-  // console.log(gen_count);
-  // state hook
-  const [store,setStore] = useState({
-    count:initial_,
-    title:"Smart Learning React!"
-  });
-  useEffect(()=>{
-    console.log("component mount!",store);
-    if(store.count>=5 && store.count <=8){
-      let _title = "You have won the match!";
-      setStore({
-        ...store,
-        title:_title
-      });
-    }else if(store.count >=8){
-      let _title = "Smart Learning React!";
-      setStore({
-        ...store,
-        title:_title
-      });
-    }
-  },[store.count])
-  const addCountValue = ()=>{
-    // let countValue = countRef.current.textContent.split(":")[1];
-    // console.log(countValue);
-    // countRef.current.textContent = `count:${parseInt(countValue)+1}`;
-    // let c_count = count+1;
-    // if(c_count <=10){
-    //   setCount(count+1);
-    // }
-    // console.log(gen_count.next());
-    let c_count = gen_count.next().value;
-    let _store = {
-      ...store,
-      count:c_count
-    };
-    setStore(_store);
-  }
+  const [isLogin,setLogin] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Title title={store.title}/>
-        <Counter count={store.count}/>
-        <button onClick={()=>{
-          addCountValue();
-        }}>count add</button>
-      </header>
+      {isLogin?<Greeting logout={()=>{setLogin(false)}}/>:<GuestGreeting login={()=>{setLogin(true)}}/>}
+      {isLogin && <h2>Shahid</h2>}
     </div>
   );
 }
