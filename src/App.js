@@ -5,9 +5,9 @@ import Title from "./component/Title";
 import Counter from "./component/Counter";
 import counterGenerator from "./utility";
 
-// import UpdateName from './component/UpdateName';
-// import ShowCounter from './component/ShowCounter';
- import UpdateObject from './component/UpdateObject';
+import UpdateName from './component/UpdateName';
+import ShowCounter from './component/ShowCounter';
+import UpdateObject from './component/UpdateObject';
 
 const gen_count = counterGenerator();
 const initial_ = gen_count.next().value;
@@ -61,10 +61,10 @@ function App() {
 
 
         {/* Lessons Practice  */}
-        {/* <UpdateName />      
-        <ShowCounter/> */}
+        <UpdateName />
+        <ShowCounter />
 
-        <UpdateObject/>
+        <UpdateObject />
       </header>
     </div>
   );
