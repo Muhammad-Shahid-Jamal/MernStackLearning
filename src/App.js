@@ -1,13 +1,17 @@
 import { useState } from "react";
-import Greeting from "./component/Greeting";
-import GuestGreeting from "./component/GuestGreeting";
+import "./App.css";
+import FormGroup from "./component/FormGroup";
+import Login from "./component/Login";
+
+//TODO login form
+//TODO input type email
+//TODO input type password
+//TODO button (submit)
 
 function App() {
-  const [isLogin,setLogin] = useState(false);
   return (
     <div className="App">
-      {isLogin?<Greeting logout={()=>{setLogin(false)}}/>:<GuestGreeting login={()=>{setLogin(true)}}/>}
-      {isLogin && <h2>Shahid</h2>}
+      <Login/>
     </div>
   );
 }
