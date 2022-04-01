@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Title from "./component/Title";
-import Counter from "./component/Counter";
-import counterGenerator from "./utility";
+// import Title from "./component/Title";
+// import Counter from "./component/Counter";
+ import counterGenerator from "./utility";
 
-import UpdateName from './component/UpdateName';
-import ShowCounter from './component/ShowCounter';
-import UpdateObject from './component/UpdateObject';
+// import UpdateName from './component/UpdateName';
+// import ShowCounter from './component/ShowCounter';
+// import UpdateObject from './component/UpdateObject';
+// import ConditionRender from './component/ConditionRender'
+ import RenderingList from  './component/RenderingList'
+// import Stylesheet from  './component/Stylesheet'
 
 const gen_count = counterGenerator();
 const initial_ = gen_count.next().value;
@@ -61,10 +64,17 @@ function App() {
 
 
         {/* Lessons Practice  */}
-        <UpdateName />
+        {/* <UpdateName />
         <ShowCounter />
 
-        <UpdateObject />
+        <UpdateObject /> 
+
+        <ConditionRender/>*/}
+
+        <RenderingList/>
+
+        {/* <Stylesheet/> */}
+
       </header>
     </div>
   );
