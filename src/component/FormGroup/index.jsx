@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import style from "./style.module.css";
 
-const FormGroup = ({label,type,onChange})=>{
+const FormGroup = (props)=>{
+    const {label,onChange} = props;
     return(
         <div className={style.form_group}>
           <label>{label}</label>
-          <input type={type} onChange={e=>onChange(e.target.value)}/>
+          <input {...props} onChange={e=>onChange(e.target.value)}/>
         </div>
     );
 };
