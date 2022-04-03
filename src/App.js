@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import FormGroup from "./component/FormGroup";
+//import FormGroup from "./component/FormGroup";
 import Login from "./component/Login";
+
 
 //TODO login form
 //TODO input type email
@@ -9,9 +10,11 @@ import Login from "./component/Login";
 //TODO button (submit)
 
 function App() {
+
   return (
     <div className="App">
       <Login/>
+      
     </div>
   );
 }
